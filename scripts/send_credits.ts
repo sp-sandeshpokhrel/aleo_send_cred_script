@@ -5,13 +5,11 @@ import { CreditsContract } from "../artifacts/js/credits";
 async function main() {
 
     const creditsContract = new CreditsContract({ mode: ExecutionMode.SnarkExecute })
-    const [sender] = await creditsContract.getAccounts()
+    const [sender] = creditsContract.getAccounts();
     const sender_credits = await creditsContract.account(sender)
     console.log(`Current credits: ${sender_credits}`)
 
-
-
-    const list_of_users: string[] = [sender]  // List of aleo users address in string
+    const list_of_users: string[] = ["aleo15ayvyxs52qkg2vsy5atln568qk49m4dndv6nptppk0l8fmt88ygs7jchep"]  // List of aleo users address in string
     const amount = BigInt(123456); // 1 ALEO credits=1000000
     for (let i = 0; i < list_of_users.length; i++) {
         try {
@@ -28,3 +26,8 @@ async function main() {
 }
 
 main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
