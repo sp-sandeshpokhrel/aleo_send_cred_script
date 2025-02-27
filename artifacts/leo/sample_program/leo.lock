@@ -1,0 +1,6 @@
+[[package]]
+name = "credits.aleo"
+network = "testnet"
+location = "network"
+checksum = "f307b63414b573b3a502cb3af17d5229e8d1b4ae94d4713428fff4f390830a69"
+dependencies = []
