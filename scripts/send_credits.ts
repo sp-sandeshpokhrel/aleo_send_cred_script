@@ -3,7 +3,6 @@ import { CreditsContract } from "../artifacts/js/credits";
 
 
 async function main() {
-    // write script to transfer credits to users
 
     const creditsContract = new CreditsContract({ mode: ExecutionMode.SnarkExecute })
     const [sender] = await creditsContract.getAccounts()
